@@ -1,4 +1,21 @@
-// 阅读推荐的链接，复习JavaScript中数组的相关方法
+a=a.split(",");
+		var pin={};
+		var maxpin='';
+		var key;
+		for(var i=0;i<a.length;i++){
+			var char=a[i];
+			if(!pin[char]){
+				pin[char]=0;
+			}
+			pin[char]++;
+		}
+		
+		for(key in pin){
+			if(maxpin==''||pin[key]>pin[maxpin]){
+				maxpin=key;
+			}
+		}
+		alert(maxpin);//output: 'a'// 阅读推荐的链接，复习JavaScript中数组的相关方法
 
 // 写程序判断下列变量是不是数组类型。
 var a = '[a, b, c, d]';
@@ -28,21 +45,30 @@ document.write(a.sort(sortNumber))// output: [10,8,5,4,1]
 
 // 编程程序，找出下列数组中出现频率最高的元素。
 var a = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
-a=a.split(",");
-		var pin={};
-		var maxpin='';
-		var key;
-		for(var i=0;i<a.length;i++){
-			var char=a[i];
-			if(!pin[char]){
-				pin[char]=0;
-			}
-			pin[char]++;
-		}
-		
-		for(key in pin){
-			if(maxpin==''||pin[key]>pin[maxpin]){
-				maxpin=key;
-			}
-		}
-		alert(maxpin);//output: 'a'
+var obj = {};// 声明一个空对象    
+    for (var i = 0; i < a.length; i++) {    //遍历数组         
+        var key = a[i];           //声明一个key接收数组中的每一个值           
+        if (obj[key]) {           //判断 如果对象中有这个属性 个数加一 如果没有 添加这个属性
+                obj[key]++;
+            } 
+	else {
+                obj[key] = 1;
+            }
+        }     
+        var Count = 0;            //定义最大的次数 以及 最大字符串的key
+        var maxString = "";        
+        for (var key in obj) {    // for in 既可以枚举对象也可以枚举数组，枚举出来的是key(数组的key是0,1,2...)
+            // console.log(key+"="+obj[key]);
+            // console.log(key);
+            if (Count < obj[key]) {
+                Count = obj[key];
+                String = key;
+            }
+        }
+        alert(String);           //String是最多频次的元素 Count是最多出现了多少次
+                                 //output: 'a' a是出现最多的元素
+	</script>
+</head>
+<body>
+</body>
+</html>
