@@ -22,9 +22,27 @@ document.write(colors[0]+","+colors[1]+","+colors[2]+","+colors[3]);// case 3 ou
 
 // 编写程序，将下面数组中的数字按从大到小的顺序排序。
 var a = [5, 1, 8, 10, 4];
-//TODO should output: [10,8,5,4,1]
+function sortNumber(a,b){return b - a}
+document.write(a.sort(sortNumber))// output: [10,8,5,4,1]
 
 
 // 编程程序，找出下列数组中出现频率最高的元素。
 var a = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
-//TODO should output: 'a'
+a=a.split(",");
+		var pin={};
+		var maxpin='';
+		var key;
+		for(var i=0;i<a.length;i++){
+			var char=a[i];
+			if(!pin[char]){
+				pin[char]=0;
+			}
+			pin[char]++;
+		}
+		
+		for(key in pin){
+			if(maxpin==''||pin[key]>pin[maxpin]){
+				maxpin=key;
+			}
+		}
+		alert(maxpin);//output: 'a'
