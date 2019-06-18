@@ -1,21 +1,4 @@
-a=a.split(",");
-		var pin={};
-		var maxpin='';
-		var key;
-		for(var i=0;i<a.length;i++){
-			var char=a[i];
-			if(!pin[char]){
-				pin[char]=0;
-			}
-			pin[char]++;
-		}
-		
-		for(key in pin){
-			if(maxpin==''||pin[key]>pin[maxpin]){
-				maxpin=key;
-			}
-		}
-		alert(maxpin);//output: 'a'// 阅读推荐的链接，复习JavaScript中数组的相关方法
+// 阅读推荐的链接，复习JavaScript中数组的相关方法
 
 // 写程序判断下列变量是不是数组类型。
 var a = '[a, b, c, d]';
